@@ -1,16 +1,39 @@
-InterbotixArmControl
-====================
+```
+  }--\     InterbotiX     /--{
+      |    Arm Fimrware  |
+   __/                    \__
+  |__|                    |__|
+```
 
-Firmware for the ArbotiX Robocontroller. Absolute X Y Z Arm Control for Interbotix Robot Arms.
 
-This is a firmware that runs on the Arbotix Robocontroller, supported arms found here:
+   This firmware allows you to control the InterbotiX Robot Arms in a standalone fashion - no PC or seperate micro controller device is required.
+   
+   
+   Arm Link will send serial packets to the ArbotiX Robocontroller that
+   specify coordinates for that arm to move to. TheArbotiX robocontroller
+   will then do the Inverse Kinematic calculations and send commands to the
+   DYNAMIXEL servos to move in such a way that the end effector ends up at
+   the specified coordinate.
+ 
+   Robot Arm Compatibilty: 
+	   PhantomX Pincher Robot Arm
+		 http://learn.trossenrobotics.com/interbotix/robot-arms/pincher-arm
+	   PhantomX Reactor Robot Arm
+		 http://learn.trossenrobotics.com/interbotix/robot-arms/reactor-arm
+	   WidowX Robot Arm
+		 http://learn.trossenrobotics.com/interbotix/robot-arms/widowx-arm
+ 
 
-NOTE: CURRENTLY ONLY SUPPORTS WIDOWX CONFIG, OTHER ARMS TO FOLLOW
+InterbotiXArmAnalog
+	Allows you to control the arm via analog inputs plugged directly into the Robot Arm. You will need 3 joysticks, 1 Rotational Knob, and 2 pushbuttons.
 
-http://www.trossenrobotics.com/robotic-arms.aspx
+InterbotiXArmPlayback
+	Designed for use in conjunction with the Arm Link Software or firmware, allows you to play back pre-set poses.
 
-http://learn.trossenrobotics.com/interbotix/robot-arms
 
-It has several library dependencies, found in our Arbotix fork here: https://github.com/trossenrobotics/arbotix
 
-This firmware is used to control the arm via serial packet, which breaks out absolute X, Y, Z Axis control, Wrist angle, Wrist rotation, Gripper control, as well as speed control. In addition, it also has the ability to control digital outputs on the arbotix, read analog inputs, and switch between several control/IK modes. More information to come.
+
+-----------------------------------------------
+See these links for information on controlling the arm via another device or PC see these links
+http://learn.trossenrobotics.com/36-demo-code/137-interbotix-arm-link-software.html
+http://learn.trossenrobotics.com/arbotix/arbotix-communication-controllers/31-arm-link-reference.html

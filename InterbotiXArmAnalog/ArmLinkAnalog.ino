@@ -1,5 +1,5 @@
 /***********************************************************************************
- *  }--\     RInterbotiX Robotic Arm           /--{
+ *  }--\     InterbotiX Robotic Arm           /--{
  *      |       Analog IK Control Code        |
  *   __/                                       \__
  *  |__|                                       |__|
@@ -114,7 +114,7 @@
 // Robotics: http://www.trossenrobotics.com/robotic-arms.aspx
 // http://learn.trossenrobotics.com/interbotix/robot-arms
 //=============================================================================
-//Armcontrol packet structure is as follows
+//ArmLink packet structure is as follows
 //
 // 255, XH, XL, YH, YL, ZH, ZL, WAH, WAL, WRH, WAL, GH, GL, DTIME, BUTTONS, EXT, CHECKSUM
 //
@@ -123,7 +123,7 @@
 // Protocol value ranges
 //
 // XH = high byte X-axis
-// XL = low byte, 0-1023 (-512 through +512 via ArmControl)
+// XL = low byte, 0-1023 (-512 through +512 via ArmLink)
 //
 // YH = high byte Y-axis
 // YL = low byte, 0-1023
@@ -132,7 +132,7 @@
 // ZL = low byte, 0-1023 
 //
 // WAH = high byte (unused for now, placeholder for higher res wrist angle)
-// WAL = low byte, 0-180 (-90 through +90 via ArmControl)
+// WAL = low byte, 0-180 (-90 through +90 via ArmLink)
 //
 // WRH = high byte 
 // WRL = low byte, 0-1023. 512 center
@@ -162,10 +162,10 @@
 // Define Options
 //=============================================================================
 
-//#define NOPE
+#define NOPE
 //#define PINCHER
 //#define REACTOR
-#define WIDOWX
+//#define WIDOWX
 
 
 #define SOUND_PIN    7      // Tell system we have added speaker to IO pin 1
@@ -177,7 +177,7 @@
 //=============================================================================
 #include <ax12.h>
 #include <BioloidController.h>
-#include <ArmControl.h>
+#include <ArmLink.h>
 #include "InputControl.h"
 #include "sequence.h"
 
@@ -185,7 +185,7 @@
 // Global Objects
 //=============================================================================
 BioloidController bioloid = BioloidController(1000000);
-ArmControl armcontrol = ArmControl();
+ArmLink armlink = ArmLink();
 
 
 
@@ -356,7 +356,7 @@ void AnalogControlLoop()
         
   while(1)
   {
-    //Process analog input from ArmControl, translate to working X,Y,Z,GA Coord
+    //Process analog input from ArmLink, translate to working X,Y,Z,GA Coord
 
   buttonState1 = digitalRead(BUTTON1);
   buttonState2 = digitalRead(BUTTON2);

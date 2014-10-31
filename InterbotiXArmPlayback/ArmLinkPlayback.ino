@@ -162,10 +162,10 @@
 // Define Options
 //=============================================================================
 
-//#define NOPE
+#define NOPE
 //#define PINCHER
 //#define REACTOR
-#define WIDOWX
+//#define WIDOWX
 
 #define ENABLE_ANALOG FA
 
@@ -181,7 +181,7 @@
 #include <ax12.h>
 #include <BioloidController.h>
 //ArmLink library
-#include <ArmControl.h>
+#include <ArmLink.h>
 //input control file - local
 #include "InputControl.h"
 
@@ -195,7 +195,7 @@
 // Global Objects
 //=============================================================================
 BioloidController bioloid = BioloidController(1000000);
-ArmControl armcontrol = ArmControl();
+ArmLink armlink = ArmLink();
 
 
 
