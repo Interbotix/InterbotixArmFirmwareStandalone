@@ -70,6 +70,9 @@ int spd = 5;  //speed modififer, increase this to increase the speed of the move
 // Check EXT packet to determine action
 //===================================================================================================
    void ExtArmState(){
+     
+        g_fArmActive = false;
+        
        if(armlink.ext < 0x10){
         // no action
         g_fArmActive = true;

@@ -17,7 +17,7 @@
 //=============================================================================
 // Pincher Global Constraints & Work Area Definition
 //=============================================================================
-#ifdef PINCHER
+#if ARMTYPE == PINCHER
 
 #define ARMID       1
 #define CNT_SERVOS  5 //(sizeof(pgm_axdIDs)/sizeof(pgm_axdIDs[0]))
@@ -95,7 +95,7 @@ enum {
 //=============================================================================
 // Reactor Global Constraints & Work Area Definition
 //=============================================================================
-#ifdef REACTOR
+#if ARMTYPE == REACTOR
 
 #define ARMID       2
 #define CNT_SERVOS  8 //(sizeof(pgm_axdIDs)/sizeof(pgm_axdIDs[0]))
@@ -177,7 +177,7 @@ enum {
 //=============================================================================
 // WidowX Global Constraints & Work Area Definition
 //=============================================================================
-#ifdef WIDOWX
+#if ARMTYPE == WIDOWX
 
 #define ARMID       3
 #define CNT_SERVOS  6 //(sizeof(p)/sizeof(pgm_axdIDs[0]))

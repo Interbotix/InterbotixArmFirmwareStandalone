@@ -32,10 +32,18 @@
 // Define Options
 //=============================================================================
 
-//#define NOPE
-//#define PINCHER
-//#define REACTOR
-//#define WIDOWX
+#define PINCHER 1
+#define REACTOR 2
+#define WIDOWX 3
+
+//uncomment one of the following lines depending on which arm you want to use
+//#define ARMTYPE PINCHER
+//#define ARMTYPE REACTOR
+//#define ARMTYPE WIDOWX
+
+#if !defined(ARMTYPE) 
+   #error YOU HAVE TO SELECT THE ARM YOU ARE USING! Uncomment the correct line above for your arm
+#endif
 
 //set USE_BUTTON to FALSE if you do not have a button attached to the ArbotiX-M
 #define USE_BUTTON true

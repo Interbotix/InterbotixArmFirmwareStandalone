@@ -25,10 +25,18 @@
 // Define Options
 //=============================================================================
 
-#define NOPE
-//#define PINCHER
-//#define REACTOR
-//#define WIDOWX
+#define PINCHER 1
+#define REACTOR 2
+#define WIDOWX 3
+
+//uncomment one of the following lines depending on which arm you want to use
+//#define ARMTYPE PINCHER
+//#define ARMTYPE REACTOR
+//#define ARMTYPE WIDOWX
+
+#if !defined(ARMTYPE) 
+   #error YOU HAVE TO SELECT THE ARM YOU ARE USING! Uncomment the correct line above for your arm
+#endif
 
 #define MAX_SERVO_DELTA_PERSEC 512
 //#define DEBUG             // Enable Debug mode via serial
